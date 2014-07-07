@@ -12,9 +12,9 @@ describe('Directive: fileLink', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<file-link></file-link>');
+  it('Translcude test', inject(function ($compile) {
+    element = angular.element('<file-link>test</file-link>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the fileLink directive');
+    expect(element.text()).toBe('test');
   }));
 });

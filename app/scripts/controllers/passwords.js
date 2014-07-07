@@ -18,7 +18,7 @@ angular.module('sspmApp')
 		$scope.generateTypes=[
 			'Letters','Letters/Numbers','Letters/Numbers/Symbols'
 		];
-		console.log($scope);
+
 		$scope.generateDetails={type:$scope.generateTypes[1],length:10};
 		
 		$scope.selectedPassword=null;

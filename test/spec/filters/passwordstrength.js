@@ -11,9 +11,9 @@ describe('Filter: PasswordStrength', function () {
     PasswordStrength = $filter('PasswordStrength');
   }));
 
-  it('should return the input prefixed with "PasswordStrength filter:"', function () {
-    var text = 'angularjs';
-    expect(PasswordStrength(text)).toBe('PasswordStrength filter: ' + text);
+  it('Password strength test"', function () {
+   var password='testpassword123';
+   expect(PasswordStrength(password)).toBe(71);
   });
 
 });

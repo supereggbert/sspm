@@ -4,6 +4,7 @@ describe('Directive: loginForm', function () {
 
   // load the directive's module
   beforeEach(module('sspmApp'));
+  beforeEach(module('views/login.html'));
 
   var element,
     scope;
@@ -12,9 +13,10 @@ describe('Directive: loginForm', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('have we got a passphrase box', inject(function ($compile) {
     element = angular.element('<login-form></login-form>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the loginForm directive');
+    scope.$digest();
+    expect(element.find('input').length).toBe(1);
   }));
 });

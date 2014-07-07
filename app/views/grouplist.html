@@ -31,7 +31,7 @@
 				<form class="navbar-form navbar-left goright" role="search">
 				<select ng-init="filterGroup={name:''}" ng-model="filterGroup.name" class="form-control">
 					<option value="">All</option>
-					<option ng-repeat="group in passwordGroups">{{group.name}}</option>
+					<option ng-repeat="group in passwordGroups track by group.idx">{{group.name}}</option>
 				</select>
 				<div class="form-group">
 					<input ng-model="filterPassword" placeholder="Filter" class="form-control">
@@ -43,16 +43,16 @@
 	<div class="sidebar">
 	<ul class="list-group">
 		<a class="list-group-item" ng-class="{active: filterGroup.name==''}" href ng-click="filterGroup.name=''">All Passwords</a>
-		<a class="list-group-item" ng-repeat="group in passwordGroups" href ng-class="{active: filterGroup.name==group.name}" ng-click="filterGroup.name=group.name">{{group.name}}</a>
+		<a class="list-group-item" ng-repeat="group in passwordGroups track by group.idx" href ng-class="{active: filterGroup.name==group.name}" ng-click="filterGroup.name=group.name">{{group.name}}</a>
 	</ul>
 	</div>
 	<div class="rightcontent">
 		<div class="alert alert-success alert-dismissible" role="alert" ng-if="userDetails.newUser">
 		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-		Congratulations you are now set up, remember don't forget your passphrase.<br />Thank you for choosing Super Simple Password Manager
+		Congratulations - you are now set up! Remember don't forget your passphrase.<br />Thank you for choosing Super Simple Password Manager
 		</div>
 			
-			<password-group ng-repeat="group in passwordGroups | filter:filterGroup:filterGroup.name!='' | filter:filterPassword track by $index">
+			<password-group  ng-animate ng-repeat="group in passwordGroups | filter:filterGroup:filterGroup.name!='' | filter:filterPassword track by group.idx">
 
 			</password-group>
 	</div>

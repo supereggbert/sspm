@@ -11,9 +11,15 @@ describe('Filter: favicon', function () {
     favicon = $filter('favicon');
   }));
 
-  it('should return the input prefixed with "favicon filter:"', function () {
-    var text = 'angularjs';
-    expect(favicon(text)).toBe('favicon filter: ' + text);
+  it('Should return the fav icon location from url"', function () {
+    var text = 'www.test.com/test/test.html';
+    expect(favicon(text)).toBe('http://www.test.com/favicon.ico');
+    var text = 'www.test.com/test/test';
+    expect(favicon(text)).toBe('http://www.test.com/favicon.ico');
+    var text = 'www.test.com?';
+    expect(favicon(text)).toBe('http://www.test.com/favicon.ico');
+    var text = 'www.test.com/?test=test';
+    expect(favicon(text)).toBe('http://www.test.com/favicon.ico');
   });
 
 });

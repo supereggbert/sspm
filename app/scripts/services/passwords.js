@@ -20,7 +20,7 @@ angular.module('sspmApp')
 		var masterPassphrase;
 		
 		var addPassword=function(group){
-			group.passwords.push({site:'',url:'',username:'',password:'',dirty:true});
+			group.passwords.push({site:'',url:'',username:'',password:'',dirty:true,idx:+new Date});
 		};
 		
 		var deletePassword=function(group,password){
@@ -31,7 +31,7 @@ angular.module('sspmApp')
 		};
 		
 		var addGroup=function(){
-			var group={name:'New Group',passwords:[]};
+			var group={name:'New Group',passwords:[],idx:+new Date};
 			addPassword(group);
 			passwordGroups.push(group);
 		};
@@ -102,6 +102,7 @@ angular.module('sspmApp')
 						passwordGroups[i]=savedPasswords[i];
 					}
 					userDetails.validated=true;
+          saveData();
 					return true;
 				}catch(e){
 					masterPassphrase=null;

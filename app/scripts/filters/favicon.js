@@ -11,6 +11,6 @@
 angular.module('sspmApp')
   .filter('favicon', function () {
     return function (input) {
-      return 'http://'+input.split('/')[0]+'/favicon.ico';
+      return 'http://'+input.split('/')[0].split('?')[0]+'/favicon.ico';
     };
   });

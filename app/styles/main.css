@@ -1,7 +1,12 @@
 /* Space out content a bit */
+html,body{
+  height: 100%;
+}
 body {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px;
+  margin-top: 0px;
+  overflow-y: scroll;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -15,6 +20,13 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 20px;
+  z-index: 200;
+  overflow: hidden;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -23,7 +35,10 @@ body {
   line-height: 40px;
   padding-bottom: 19px;
 }
-
+.maincontent{
+  padding-top: 59px;
+  min-height: 100%;
+}
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -53,12 +68,7 @@ body {
 		float: none !important;
 	}
 }
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 980px;
-  }
-}
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -79,7 +89,15 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
-
+.header h3 a{
+  color: #000;
+}
+.header h3 a:hover{
+  text-decoration:none;
+}
+.header small{
+    display:none;
+  }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -90,13 +108,153 @@ body {
     padding-right: 0;
   }
   /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+  .header small{
+    display:inline;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
+}
+.authenticate{
+  max-width: 500px; 
+  margin: auto; 
+}
+.center{
+  text-align: center;
+}
+.passwordsList .feild{
+	margin-bottom: 10px;
+}
+.generateForm{
+	padding: 5px;
+	margin: 5px;
+	background-color:#eee;
+	border: 1px solid #ddd;
+}
+.passwordLayout{
+	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+	box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+	background-color:#fff;
+	padding: 10px;
+	margin-bottom: 10px;
+	min-width: 200px;
+}
+.passwordsList{
+	list-style: none outside none;
+	margin:0;
+	padding:0;
+}
+.favicon{
+	width: 24px;
+	height: 24px;
+	background-size: contain;
+	float: left;
+}
+.title{
+	font-size: 20px;
+	line-height: 24px;
+	padding-left: 10px;
+	color:#000;
+}
+.passwordDetails{
+	padding-left: 34px;
+	padding-top: 5px;
+}
+.group{
+	background-color:#f5f5f5;;
+}
+.badge{
+	top: -2px;
+	position:relative;
+}
+.loginbanner{
+  padding: 50px 0px;
+  background-image: url(../images/banner.jpg); 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  margin-bottom: 0px;
+}
+.groupList{
+  padding-top: 30px;
+}
+.about{
+  background-color: #eee;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.bigcircle{
+  font-size: 100px;
+  text-align: center;
+  padding-top: 25px;
+  position: relative;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+}
+.frontabout{
+  padding-bottom: 50px;
+}
+.frontabout ul{
+  margin-left: 0px;
+  padding-left: 15px;
+  list-style-type:square;
+}
+
+@media screen and (max-width: 992px) {
+  .bigcircle{
+    float: left;
+    margin-left: 0;
+    left: 0;
+    margin-left: 0;
+  }
+  .frontabout p,.frontabout ul,.frontabout h4{
+      padding-left: 150px;
+  }
+  .frontabout .col-lg-4{
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+  }
+  .col-lg-5, .col-lg-2, .col-lg-3{
+    padding-bottom: 5px;
+  }
+}
+@media screen and (max-width: 479px) {
+   .bigcircle{
+      width: 100%;
+      float: none;
+      text-align: centerl
+   }
+  .frontabout p,.frontabout ul,.frontabout h4{
+      padding-left: 15px;
+  }
+
+}
+password-group, passwordview{
+  display: block;
+	-webkit-transition: 0.3s ease all; /* Chrome */
+	transition: 0.3s ease all; 
+  transform-origin: top;
+  max-height: 1000px;
+}
+password-group.ng-leave-active, password-group.ng-enter,
+passwordview.ng-leave-active, passwordview.ng-enter,
+passwordview.ng-move, password-group.ng-move
+{
+	opacity: 0;
+  transform: scaleY(0);
+  max-height: 0px;
+  overflow: hidden;
+}
+password-group.ng-enter.ng-enter-active,
+passwordview.ng-enter.ng-enter-active,
+password-group.ng-move.ng-move-active,
+passwordview.ng-move.ng-move-active
+{
+	opacity: 1;
+  transform: scaleY(1);
+  max-height: 1000px;
 }
 
 

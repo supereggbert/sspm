@@ -15,53 +15,6 @@
     <link rel="stylesheet" href="styles/flatly.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <style>
-			.passwordsList .feild{
-				margin-bottom: 10px;
-			}
-			.generateForm{
-				padding: 5px;
-				margin: 5px;
-				background-color:#eee;
-				border: 1px solid #ddd;
-			}
-			.passwordLayout{
-				-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-				box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-				background-color:#fff;
-				padding: 10px;
-				margin-bottom: 10px;
-				min-width: 200px;
-			}
-			.passwordsList{
-				list-style: none outside none;
-				margin:0;
-				padding:0;
-			}
-			.favicon{
-				width: 24px;
-				height: 24px;
-				background-size: contain;
-				float: left;
-			}
-			.title{
-				font-size: 20px;
-				line-height: 24px;
-				padding-left: 10px;
-				color:#000;
-			}
-			.passwordDetails{
-				padding-left: 34px;
-				padding-top: 5px;
-			}
-			.group{
-				background-color:#f5f5f5;;
-			}
-			.badge{
-				top: -2px;
-				position:relative;
-			}
-		</style>
   </head>
   <body ng-app="sspmApp">
     <!--[if lt IE 7]>
@@ -69,19 +22,25 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <nav-menu></nav-menu>
-        <h3 class="text-muted">SSPM</h3>
-      </div>
-<!-- Small modal -->
-
-      <div ng-view=""></div>
-
-      <div class="footer">
-        <p>&copy; Paul Brunt</p>
+    
+    <div class="header">
+      <div class="container">
+      <nav-menu></nav-menu>
+      <h3 class="text-muted"><a href="#"><span class="glyphicon glyphicon-lock"></span> SSPM <small>: Super Simple Password Manager</small></a></h3>
       </div>
     </div>
+      
+<!-- Small modal -->
+      <div class="maincontent">
+      <div ng-view=""></div>
+      </div>
+
+      <div class="footer">
+        <div class="container">
+         <p>&copy; Paul Brunt</p>
+        </div>
+      </div>
+
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -115,9 +74,11 @@
     <script src="bower_components/owasp-password-strength-test/owasp-password-strength-test.js"></script>
     <script src="bower_components/bootbox/bootbox.js"></script>
     <!-- endbower -->
+    <script src="bower_components/crypto-js-evanvosberg/build/rollups/aes.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/headerresize.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/passwords.js"></script>

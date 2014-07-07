@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app=angular
   .module('sspmApp', [
     'ngAnimate',
     'ngCookies',
@@ -19,10 +19,6 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
       .when('/', {
         templateUrl: 'views/passwordlist.html',
         controller: 'PasswordsCtrl'
@@ -35,4 +31,6 @@ angular
     function( $compileProvider ){   
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|data):/);
     }
-]);;
+]);
+
+
