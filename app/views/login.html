@@ -1,0 +1,41 @@
+<div id="login">
+	<div class="well">
+		<p>Super Simple Password Manager is a quick and easy was to manage your password. If this is your first time all you need to do is pick a passphrase and enter it below. Your password are encrypted so if you forget your passphrase they you will no longer be able to access you passwords.
+		<br><br><a href="#/about" class="btn btn-info pull-right">More info</a>
+		<div class="clearfix"></div>
+		</p>
+	</div>
+	
+	<div class="alert alert-danger alert-dismissible" role="alert" ng-if="errored">
+	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	The passphrase you entered caused an error, please check you have entered it correctly
+	</div>
+	<div class="authenticate panel panel-default">
+		<div class="panel-heading">
+		Authenticate
+		</div>
+		<div class="panel-body">
+			<p>Please enter your passphrase below</p>
+			<input type="text" class="form-control" ng-model="passphrase" placeholder="Your Passphrase"><br />
+			<a href ng-click="login()" class="btn btn-primary">Open Passwords</a>
+		</div>
+	</div>
+	<div ng-if="createPassword==password">
+		<div class="row">
+			<div class="col-lg-6">
+				<h4>What makes a good passphrase?</h4>
+				<ul>
+					<li>Long enough to be hard to guess</li>
+					<li>Not a famous quotation from literature, holy books, et cetera</li>
+					<li>Hard to guess by intuition--even by someone who knows the user well</li>
+					<li>Easy to remember and type accurately</li>
+					<li>For better security, any easily memorable encoding at your own level can be applied.</li>
+					<li>Not reused between sites, applications and other different sources.</li>
+				</ul>
+			</div>
+			<div class="col-lg-6">
+				<h4>Remeber to make backups</h4>
+				<p>Your passwords are stored locally on your browser so please make use of the export function to make regular backups.  The exported file is encrypted using your passphrase so what ever you do don't forget it.</p>
+			</div>
+		</div>
+</div>
